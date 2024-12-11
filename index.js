@@ -19,22 +19,22 @@ console.error("Ошибка при получении IP-адреса:", error);
 });
 }
 
-// async function IP_local(ip) {
-// fetch(`https://ipapi.co/${ip}/json/`)
-// .then(response => response.json())
-// .then(data => {
-//     createText(data);
-//     document.querySelector("body").innerHTML(`
-//     <ul>
-//         <li>${data.city}</li>
-//         <li>${data.region}</li>
-//         <li>${data.country_name}</li>
-//     </ul>
-//     `);
+async function IP_local(ip) {
+fetch(`https://ip-api.com/${ip}`)
+.then(response => response.json())
+.then(data => {
+    createText(data);
+    document.querySelector("body").innerHTML(`
+    <ul>
+        <li> Country :${data.city}</li>
+        <li> City: ${data.regionName}</li>
+        <li> Mobile : ${data.as}</li>
+    </ul>
+    `);
 
-// });
+});
 
-// }
+}
 
 IP_TEST();
 
